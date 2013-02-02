@@ -1,0 +1,23 @@
+apply {
+    plugin 'groovy'
+    plugin 'maven'
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url "http://repository.codehaus.org"
+    }
+}
+
+group = 'org.netkernelroc.gradle'
+version = '0.0.1-SNAPSHOT'
+
+dependencies {
+    compile gradleApi()
+    groovy localGroovy()
+    compile 'org.codehaus.groovy.modules.http-builder:http-builder:0.6'
+    runtime 'org.codehaus.groovy.modules.http-builder:http-builder:0.6'
+
+    testCompile 'junit:junit:4.7'
+}
