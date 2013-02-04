@@ -4,6 +4,7 @@ import groovyx.net.http.HTTPBuilder
 import groovyx.net.http.Method
 
 class NetKernelHelper {
+    def FileSystemHelper fileSystemHelper = new FileSystemHelper()
     def isNetKernelRunning() {
         def retValue = false
 
@@ -18,6 +19,17 @@ class NetKernelHelper {
                 }
             }
         } catch(Throwable t) {
+        }
+
+        retValue
+    }
+
+    def isNetKernelInstalled() {
+        def retValue = false
+        def instanceFile = "${fileSystemHelper.gradleHomeDir()}/netkernel/instances"
+
+        if(fileSystemHelper.fileExists(instanceFile)) {
+            retValue = (fileSystemHelper.readFileContents(instanceFile).size() >= 1)
         }
 
         retValue
