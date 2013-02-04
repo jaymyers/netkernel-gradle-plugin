@@ -1,17 +1,17 @@
 package org.netkernelroc.gradle
 
-import groovy.org.netkernelroc.gradle.tasks.DownloadNKSE
-import groovy.org.netkernelroc.gradle.tasks.InstallNKSEJar
-import groovy.org.netkernelroc.gradle.tasks.RunNKSEJar
-import groovy.org.netkernelroc.gradle.tasks.CheckNetKernelInstallation
-
-import groovy.org.netkernelroc.gradle.util.FileSystemHelper
-import groovy.org.netkernelroc.gradle.util.NetKernelHelper
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.Task
 import org.gradle.api.execution.TaskExecutionListener
 import org.gradle.api.tasks.TaskState
+import groovy.org.netkernelroc.gradle.tasks.CheckNetKernelInstallation
+import org.netkernelroc.gradle.tasks.DownloadNKSE
+import org.netkernelroc.gradle.tasks.InstallNKSEJar
+import org.netkernelroc.gradle.tasks.NetKernelStatus
+import org.netkernelroc.gradle.tasks.RunNKSEJar
+import org.netkernelroc.gradle.util.FileSystemHelper
+import org.netkernelroc.gradle.util.NetKernelHelper
 
 /**
  * NetKernel Plugin
@@ -25,6 +25,8 @@ class NetKernelPlugin implements Plugin<Project> {
         p.extensions.create("nkHelper", NetKernelHelper)
 
         p.tasks.add(name: 'downloadNetKernel', type: DownloadNKSE)
+        p.tasks.add(name: 'netkernelStatus', type: NetKernelStatus)
+
 
         p.tasks.add(name: 'runNetKernelJar', type: RunNKSEJar) {
             workingDir "${project.fsHelper.gradleHomeDir()}/netkernel"

@@ -1,4 +1,4 @@
-package groovy.org.netkernelroc.gradle.tasks
+package org.netkernelroc.gradle.tasks
 
 import org.apache.tools.ant.BuildEvent
 import org.apache.tools.ant.BuildListener
