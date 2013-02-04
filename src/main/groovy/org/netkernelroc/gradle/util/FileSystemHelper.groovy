@@ -1,4 +1,4 @@
-package groovy.org.netkernelroc.gradle.util
+package org.netkernelroc.gradle.util
 
 /**
  * Helper for FileSystem-related activities.
