@@ -3,6 +3,7 @@ package org.netkernelroc.gradle
 import groovy.org.netkernelroc.gradle.tasks.DownloadNKSE
 import groovy.org.netkernelroc.gradle.tasks.InstallNKSEJar
 import groovy.org.netkernelroc.gradle.tasks.RunNKSEJar
+import groovy.org.netkernelroc.gradle.tasks.CheckNetKernelInstallation
 
 import groovy.org.netkernelroc.gradle.util.FileSystemHelper
 import groovy.org.netkernelroc.gradle.util.NetKernelHelper
@@ -52,6 +53,8 @@ class NetKernelPlugin implements Plugin<Project> {
         p.tasks.add(name: 'installNetKernelJar', type: InstallNKSEJar) {
             onlyIf { !project.fsHelper.gradleHomeDirectoryExists("/netkernel/install") }
         }
+
+        p.tasks.add(name: 'checkNetKernelInstallation', type: CheckNetKernelInstallation)
 
         p.tasks.installNetKernelJar.dependsOn "downloadNetKernel"
     }
