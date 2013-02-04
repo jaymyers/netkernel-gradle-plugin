@@ -17,9 +17,24 @@ class NetKernelHelper {
                     retValue = true
                 }
             }
-        } catch(Throwable t) {
+        } catch (Throwable t) {
         }
 
         retValue
+    }
+
+    def whereIsNetKernelInstalled() throws Exception {
+
+        // Get the directory where this script was executed
+        def projectDirectory = System.getProperty("user.dir")
+
+        // Check that NetKernel is running as we need that to learn where it is installed
+        // This URL will return the the local absolute file URL location of the installation location of NetKernel
+        def installLocationURL = 'http://localhost:1060/tools/scriptplaypen?action2=execute&type=gy&example&identifier&name&space&script=context%2EcreateResponseFrom%28context%2Esource%28%22netkernel%3A%2Fconfig%2Fnetkernel%2Einstall%2Epath%22%29%29'
+        def installLocation
+        def modulesExtensionLocation
+        installLocation = new URL(installLocationURL).text.substring(5)
+
+        return installLocation
     }
 }
