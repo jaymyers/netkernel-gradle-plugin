@@ -1,4 +1,4 @@
-package groovy.org.netkernelroc.gradle.util
+package org.netkernelroc.gradle.util
 
 import groovyx.net.http.HTTPBuilder
 import groovyx.net.http.Method

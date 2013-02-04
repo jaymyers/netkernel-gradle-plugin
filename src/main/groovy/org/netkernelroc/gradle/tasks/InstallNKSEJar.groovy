@@ -1,4 +1,4 @@
-package groovy.org.netkernelroc.gradle.tasks
+package org.netkernelroc.gradle.tasks
 
 import groovyx.net.http.RESTClient
 import org.gradle.api.DefaultTask

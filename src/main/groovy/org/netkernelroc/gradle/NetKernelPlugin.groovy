@@ -1,11 +1,11 @@
 package org.netkernelroc.gradle
 
-import groovy.org.netkernelroc.gradle.tasks.DownloadNKSE
-import groovy.org.netkernelroc.gradle.tasks.InstallNKSEJar
-import groovy.org.netkernelroc.gradle.tasks.RunNKSEJar
+import org.netkernelroc.gradle.tasks.DownloadNKSE
+import org.netkernelroc.gradle.tasks.InstallNKSEJar
+import org.netkernelroc.gradle.tasks.RunNKSEJar
 
-import groovy.org.netkernelroc.gradle.util.FileSystemHelper
-import groovy.org.netkernelroc.gradle.util.NetKernelHelper
+import org.netkernelroc.gradle.util.FileSystemHelper
+import org.netkernelroc.gradle.util.NetKernelHelper
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.Task
