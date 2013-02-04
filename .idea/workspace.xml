@@ -2,22 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0193e616-6d80-42c4-bc85-84e40b41295b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/tasks/DownloadNKSE.groovy" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/util/FileSystemHelper.groovy" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/groovy/org/netkernelroc/gradle/util/FileSystemHelperTest.groovy" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/tasks/InstallNKSEJar.groovy" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/util/NetKernelHelper.groovy" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/NetKernelPlugin.groovy" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/tasks/RunNKSEJar.groovy" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/basic/build.gradle" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/http_builder_0_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/tasks/CheckNetKernelInstallation.groovy" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/org/netkernelroc/gradle/NetKernelPlugin.groovy" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/util/NetKernelHelper.groovy" afterPath="$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/util/NetKernelHelper.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/NetKernelPlugin.groovy" afterPath="$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/NetKernelPlugin.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="netkernel-gradle-plugin.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="0193e616-6d80-42c4-bc85-84e40b41295b" time="1359477761369" ignored="false" />
     <file path="/build.gradle" changelist="0193e616-6d80-42c4-bc85-84e40b41295b" time="1357199084468" ignored="false" />
-    <file path="/NetKernelPlugin.groovy" changelist="0193e616-6d80-42c4-bc85-84e40b41295b" time="1359777285614" ignored="false" />
+    <file path="/NetKernelPlugin.groovy" changelist="0193e616-6d80-42c4-bc85-84e40b41295b" time="1359779707240" ignored="false" />
     <file path="/Volumes/BestBuy/Metis/git/data-integration/urn.com.bbyopen.metis.di.product/com/bbyopen/metis/di/product/endpoint/RDFDumpAccessor.groovy" changelist="0193e616-6d80-42c4-bc85-84e40b41295b" time="1357179276827" ignored="false" />
     <file path="/RDFDumpAccessor.groovy" changelist="0193e616-6d80-42c4-bc85-84e40b41295b" time="1357178007746" ignored="false" />
     <file path="/Volumes/BestBuy/Metis/git/data-integration/urn.com.bbyopen.metis.di.product/module.xml" changelist="0193e616-6d80-42c4-bc85-84e40b41295b" time="1357004240451" ignored="false" />
@@ -34,7 +29,7 @@
     <file path="/open2rdf2.xsl" changelist="0193e616-6d80-42c4-bc85-84e40b41295b" time="1357181415847" ignored="false" />
     <file path="/Volumes/BestBuy/Metis/git/data-integration/urn.com.bbyopen.metis.di.product/resources/xsl/movierdf.xsl" changelist="0193e616-6d80-42c4-bc85-84e40b41295b" time="1357879037343" ignored="false" />
     <file path="/StdOutLoggingTask.groovy" changelist="0193e616-6d80-42c4-bc85-84e40b41295b" time="1357188030482" ignored="false" />
-    <file path="/NetKernelHelper.groovy" changelist="0193e616-6d80-42c4-bc85-84e40b41295b" time="1357198045533" ignored="false" />
+    <file path="/NetKernelHelper.groovy" changelist="0193e616-6d80-42c4-bc85-84e40b41295b" time="1359779562678" ignored="false" />
     <file path="/Volumes/BestBuy/Metis/git/data-integration/urn.com.bbyopen.metis.di.product/resources/xsl/musicrdf.xsl" changelist="0193e616-6d80-42c4-bc85-84e40b41295b" time="1357879037343" ignored="false" />
     <file path="/InstallNKSEJar.groovy" changelist="0193e616-6d80-42c4-bc85-84e40b41295b" time="1359776921622" ignored="false" />
     <file path="/Volumes/BestBuy/Metis/git/triple-store/urn.com.bbyopen.metis.ts.sparql.test/resources/tests/testlist.xml" changelist="0193e616-6d80-42c4-bc85-84e40b41295b" time="1357585946341" ignored="false" />
@@ -85,6 +80,7 @@
     <file path="/Volumes/BestBuy/Metis/git/user-interface/urn.com.bbyopen.metis.ui.sparql/resources/stylesheets/results.xsl" changelist="0193e616-6d80-42c4-bc85-84e40b41295b" time="1359440572194" ignored="false" />
     <file path="/results.xsl" changelist="0193e616-6d80-42c4-bc85-84e40b41295b" time="1359440571443" ignored="false" />
     <file path="/RunNKSEJarThread.groovy" changelist="0193e616-6d80-42c4-bc85-84e40b41295b" time="1359759696824" ignored="false" />
+    <file path="/CheckNetKernelInstallation.groovy" changelist="0193e616-6d80-42c4-bc85-84e40b41295b" time="1359779917414" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +152,7 @@
       <file leaf-file-name="NetKernelPlugin.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/NetKernelPlugin.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="64" selection-start="1939" selection-end="1939" vertical-scroll-proportion="0.0">
+            <state line="30" column="31" selection-start="1077" selection-end="1077" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#33#89#0" expanded="true" />
               </folding>
@@ -164,10 +160,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InstallNKSEJar.groovy" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="CheckNetKernelInstallation.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/tasks/CheckNetKernelInstallation.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="53" selection-start="463" selection-end="463" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InstallNKSEJar.groovy" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/tasks/InstallNKSEJar.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="70" selection-start="714" selection-end="714" vertical-scroll-proportion="0.0">
+            <state line="21" column="70" selection-start="714" selection-end="714" vertical-scroll-proportion="0.026717557">
               <folding>
                 <element signature="e#46#80#0" expanded="true" />
               </folding>
@@ -178,16 +183,16 @@
       <file leaf-file-name="DownloadNKSE.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/tasks/DownloadNKSE.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="6" selection-start="311" selection-end="311" vertical-scroll-proportion="0.0">
+            <state line="12" column="40" selection-start="324" selection-end="383" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RunNKSEJar.groovy" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="RunNKSEJar.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/tasks/RunNKSEJar.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="0" selection-start="84" selection-end="84" vertical-scroll-proportion="0.14312977">
+            <state line="5" column="0" selection-start="84" selection-end="84" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -205,7 +210,7 @@
       <file leaf-file-name="FileSystemHelperTest.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/groovy/org/netkernelroc/gradle/util/FileSystemHelperTest.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="48" selection-start="979" selection-end="1004" vertical-scroll-proportion="0.0">
+            <state line="44" column="29" selection-start="1320" selection-end="1320" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -220,19 +225,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/examples/basic/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="9" selection-start="199" selection-end="199" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="NetKernelHelper.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/util/NetKernelHelper.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="31" selection-start="206" selection-end="555" vertical-scroll-proportion="0.0">
+            <state line="32" column="40" selection-start="946" selection-end="946" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -267,7 +263,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/org/netkernelroc/gradle/NetKernelPlugin.groovy" />
         <option value="$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/tasks/StdOutLoggingTask.groovy" />
-        <option value="$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/util/NetKernelHelper.groovy" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/examples/basic/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/tasks/RunNKSEJarThread.groovy" />
@@ -275,8 +270,10 @@
         <option value="$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/tasks/InstallNKSEJar.groovy" />
         <option value="$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/util/FileSystemHelper.groovy" />
         <option value="$PROJECT_DIR$/src/test/groovy/org/netkernelroc/gradle/util/FileSystemHelperTest.groovy" />
-        <option value="$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/NetKernelPlugin.groovy" />
         <option value="$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/tasks/RunNKSEJar.groovy" />
+        <option value="$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/util/NetKernelHelper.groovy" />
+        <option value="$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/NetKernelPlugin.groovy" />
+        <option value="$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/tasks/CheckNetKernelInstallation.groovy" />
       </list>
     </option>
   </component>
@@ -606,7 +603,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="34" y="48" width="1424" height="718" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23802613" sideWeight="0.6722408" order="3" side_tool="false" content_ui="tabs" />
@@ -626,7 +623,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24963716" sideWeight="0.6722408" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24963716" sideWeight="0.6722408" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3277592" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -695,13 +692,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/examples/basic/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="20" selection-start="46" selection-end="46" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/util/NetKernelHelper.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="51" selection-start="250" selection-end="250" vertical-scroll-proportion="0.0">
@@ -739,13 +729,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/util/NetKernelHelper.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="31" selection-start="206" selection-end="555" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/netkernel-gradle-plugin.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="0" selection-start="79" selection-end="79" vertical-scroll-proportion="0.0">
@@ -774,42 +757,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/groovy/org/netkernelroc/gradle/util/FileSystemHelperTest.groovy">
+    <entry file="file://$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/tasks/RunNKSEJar.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="48" selection-start="979" selection-end="1004" vertical-scroll-proportion="0.0">
+        <state line="5" column="0" selection-start="84" selection-end="84" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/tasks/DownloadNKSE.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="40" selection-start="324" selection-end="383" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/tasks/CheckNetKernelInstallation.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="53" selection-start="463" selection-end="463" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/util/NetKernelHelper.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="40" selection-start="946" selection-end="946" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/NetKernelPlugin.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="64" selection-start="1939" selection-end="1939" vertical-scroll-proportion="0.0">
+        <state line="30" column="31" selection-start="1077" selection-end="1077" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#33#89#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/tasks/DownloadNKSE.groovy">
+    <entry file="file://$PROJECT_DIR$/src/test/groovy/org/netkernelroc/gradle/util/FileSystemHelperTest.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="6" selection-start="311" selection-end="311" vertical-scroll-proportion="0.0">
+        <state line="44" column="29" selection-start="1320" selection-end="1320" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/tasks/InstallNKSEJar.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="70" selection-start="714" selection-end="714" vertical-scroll-proportion="0.0">
+        <state line="21" column="70" selection-start="714" selection-end="714" vertical-scroll-proportion="0.026717557">
           <folding>
             <element signature="e#46#80#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/groovy/org/netkernelroc/gradle/tasks/RunNKSEJar.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="84" selection-end="84" vertical-scroll-proportion="0.14312977">
-          <folding />
         </state>
       </provider>
     </entry>
