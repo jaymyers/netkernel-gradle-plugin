@@ -16,19 +16,16 @@ class NetKernelStatus extends DefaultTask {
 
         try {
             def String installLocation = project.nkHelper.whereIsNetKernelInstalled()
-
-            println "NetKernel is running and is located at:"
-            println installLocation
-
             def String moduleExtensionDirectory = project.nkHelper.whereIsModuleExtensionDirectory()
 
             // test for failure!
-
             File modulesD = new File(installLocation + moduleExtensionDirectory)
             modulesD.listFiles().each { File file ->
-                println "For ${file.name}"
-                Node projectXML = new XmlParser(false, true).parse(file)
-                projectXML.each { println "   ${it}" }
+                if (!file.isDirectory()) {
+                    println "For ${file.name}"
+                    Node projectXML = new XmlParser(false, true).parse(file)
+                    projectXML.each { println "   ${it}" }
+                }
             }
         }
         catch (Exception e) {

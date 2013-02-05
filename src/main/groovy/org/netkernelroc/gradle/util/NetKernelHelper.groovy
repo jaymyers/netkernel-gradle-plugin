@@ -45,16 +45,12 @@ class NetKernelHelper {
     }
 
     def whereIsNetKernelInstalled() throws Exception {
-
         def installLocation = queryNetKernelProperty('netkernel:/config/netkernel.install.path').substring(5)
-
         return installLocation
     }
 
     def whereIsModuleExtensionDirectory() throws Exception {
-
         def extensionDirectoryRelativeLocation = queryNetKernelProperty('netkernel:/config/netkernel.init.modulesdir')
-
         return extensionDirectoryRelativeLocation
     }
 
