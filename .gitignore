@@ -1,3 +1,5 @@
 .gradle
 build
 out
+codeStyleSettings.xml
+workspace.xml
