@@ -5,10 +5,7 @@ import org.gradle.api.Project
 import org.gradle.api.Task
 import org.gradle.api.execution.TaskExecutionListener
 import org.gradle.api.tasks.TaskState
-import org.netkernelroc.gradle.tasks.DownloadNKSE
-import org.netkernelroc.gradle.tasks.InstallNKSEJar
-import org.netkernelroc.gradle.tasks.NetKernelStatus
-import org.netkernelroc.gradle.tasks.RunNKSEJar
+import org.netkernelroc.gradle.tasks.*
 import org.netkernelroc.gradle.util.FileSystemHelper
 import org.netkernelroc.gradle.util.NetKernelHelper
 
@@ -25,7 +22,8 @@ class NetKernelPlugin implements Plugin<Project> {
 
         p.tasks.add(name: 'downloadNetKernel', type: DownloadNKSE)
         p.tasks.add(name: 'netkernelStatus', type: NetKernelStatus)
-
+        p.tasks.add(name: 'installNetKernelModules', type: InstallModules)
+        p.tasks.add(name: 'removeNetKernelModules', type: RemoveModules)
 
         p.tasks.add(name: 'runNetKernelJar', type: RunNKSEJar) {
             workingDir "${project.fsHelper.gradleHomeDir()}/netkernel"
