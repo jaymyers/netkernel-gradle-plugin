@@ -2,6 +2,11 @@ package org.netkernelroc.gradle.util
 
 import groovyx.net.http.HTTPBuilder
 import groovyx.net.http.Method
+/**
+ * Class provides helper methods for working with NetKernel
+ *
+ * TODO: Decide how to handle responses that could begin with file://
+ */
 
 class NetKernelHelper {
     def isNetKernelRunning() {
@@ -23,18 +28,34 @@ class NetKernelHelper {
         retValue
     }
 
+    /**
+     * Returns a NetKernel property value by sending a remote script query to the NetKernel sandbox.
+     *
+     * NB: This will be replaced with a call to a  proper REST interface after we finish working on all the
+     * interactions with NetKernel.
+     *
+     * @param properyReference
+     * @throws Exception
+     */
+    def queryNetKernelProperty(String properyReference) throws Exception {
+        def String encodedProperty = java.net.URLEncoder.encode(properyReference)
+        def queryURL = 'http://localhost:1060/tools/scriptplaypen?action2=execute&type=gy&example&identifier&name&space&script=context%2EcreateResponseFrom%28context%2Esource%28%22'+encodedProperty+'%22%29%29'
+        def String queryResponse = new URL(queryURL).text
+        return queryResponse
+    }
+
     def whereIsNetKernelInstalled() throws Exception {
 
-        // Get the directory where this script was executed
-        def projectDirectory = System.getProperty("user.dir")
-
-        // Check that NetKernel is running as we need that to learn where it is installed
-        // This URL will return the the local absolute file URL location of the installation location of NetKernel
-        def installLocationURL = 'http://localhost:1060/tools/scriptplaypen?action2=execute&type=gy&example&identifier&name&space&script=context%2EcreateResponseFrom%28context%2Esource%28%22netkernel%3A%2Fconfig%2Fnetkernel%2Einstall%2Epath%22%29%29'
-        def installLocation
-        def modulesExtensionLocation
-        installLocation = new URL(installLocationURL).text.substring(5)
+        def installLocation = queryNetKernelProperty('netkernel:/config/netkernel.install.path').substring(5)
 
         return installLocation
     }
+
+    def whereIsModuleExtensionDirectory() throws Exception {
+
+        def extensionDirectoryRelativeLocation = queryNetKernelProperty('netkernel:/config/netkernel.init.modulesdir')
+
+        return extensionDirectoryRelativeLocation
+    }
+
 }
