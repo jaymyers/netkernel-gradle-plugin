@@ -34,11 +34,11 @@ class NetKernelHelper {
      * NB: This will be replaced with a call to a  proper REST interface after we finish working on all the
      * interactions with NetKernel.
      *
-     * @param properyReference
+     * @param propertyReference
      * @throws Exception
      */
-    def queryNetKernelProperty(String properyReference) throws Exception {
-        def String encodedProperty = java.net.URLEncoder.encode(properyReference)
+    def queryNetKernelProperty(String propertyReference) throws Exception {
+        def String encodedProperty = java.net.URLEncoder.encode(propertyReference)
         def queryURL = 'http://localhost:1060/tools/scriptplaypen?action2=execute&type=gy&example&identifier&name&space&script=context%2EcreateResponseFrom%28context%2Esource%28%22'+encodedProperty+'%22%29%29'
         def String queryResponse = new URL(queryURL).text
         return queryResponse
