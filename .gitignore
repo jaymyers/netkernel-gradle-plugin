@@ -1,5 +1,7 @@
+*~
+*.class
 .gradle
 build
 out
-codeStyleSettings.xml
-workspace.xml
+.idea
+*.iml
