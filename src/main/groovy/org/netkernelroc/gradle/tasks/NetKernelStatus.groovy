@@ -15,13 +15,17 @@ class NetKernelStatus extends DefaultTask {
     void checkNetKernelStatus() {
 
         try {
-            installLocation = project.nkHelper.whereIsNetKernelInstalled()
+            def String installLocation = project.nkHelper.whereIsNetKernelInstalled()
+            def String moduleExtensionDirectory = project.nkHelper.whereIsModuleExtensionDirectory()
 
-            File modulesD = new File(installLocation + 'etc/modules.d/')
+            // test for failure!
+            File modulesD = new File(installLocation + moduleExtensionDirectory)
             modulesD.listFiles().each { File file ->
-                println "For ${file.name}"
-                Node projectXML = new XmlParser(false, true).parse(file)
-                projectXML.each { println "   ${it}" }
+                if (!file.isDirectory()) {
+                    println "For ${file.name}"
+                    Node projectXML = new XmlParser(false, true).parse(file)
+                    projectXML.each { println "   ${it}" }
+                }
             }
         }
         catch (Exception e) {
