@@ -1,0 +1,28 @@
+<module version="2.0">
+  <meta>
+    <identity>
+      <uri>MODULE_URI</uri>
+      <version>0.0.1</version>
+    </identity>
+    <info>
+      <name>System / Service / Documentation</name>
+      <description>Add description</description>
+      <icon>res:/MODULE_CLASSPATH/images/icon.png</icon>
+    </info>
+  </meta>
+
+  <system>
+    <dynamic />
+  </system>
+
+  <rootspace name="System / Service / Documentation" public="true" uri="MODULE_URI" >
+
+    <fileset>
+      <regex>res:/etc/system/(Books|Docs).xml</regex>
+    </fileset>
+    <fileset>
+      <regex>res:/MODULE_CLASSPATH/doc/.*</regex>
+    </fileset>
+  </rootspace>
+
+</module>

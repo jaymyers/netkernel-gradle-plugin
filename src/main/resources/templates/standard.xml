@@ -1,0 +1,80 @@
+<module version="2.0">
+  <meta>
+    <identity>
+      <uri>MODULE_URI</uri>
+      <version>0.0.1</version>
+    </identity>
+    <info>
+      <name>System / Service</name>
+      <description>Add description</description>
+      <icon>res:/MODULE_CLASSPATH/images/icon.png</icon>
+    </info>
+  </meta>
+
+  <system>
+    <dynamic />
+  </system>
+
+  <rootspace name="System / Service" uri="MODULE_URI">
+
+    <mapper>
+      <config>
+        <endpoint>
+          <request>
+            <identifier>meta:id:callMe</identifier>
+          </request>
+        </endpoint>
+      </config>
+      <space>
+        <accessor>
+          <id>id:callMe</id>
+          <grammar>
+            <active>
+              <identifier>active:callMe</identifier>
+            </active>
+          </grammar>
+          <class>JAVA_PACKAGE.endpoint.TestEndpoint</class>
+        </accessor>
+          <import>
+            <uri>urn:org:netkernel:ext:system</uri>
+          </import>
+            <import>
+              <uri>urn:org:netkernel:ext:layer1</uri>
+            </import>
+        <import>
+          <uri>urn:org:netkernel:lang:groovy</uri>
+        </import>
+      </space>
+    </mapper>
+
+    <fileset>
+      <regex>res:/MODULE_CLASSPATH/images/icon.png</regex>
+      <rewrite>res:/resources/images/icon.png</rewrite>
+    </fileset>
+  </rootspace>
+
+  <rootspace
+    name="System / Service / HTTP"
+    uri="MODULE_URI:http"
+    public="true"
+    >
+
+    <mapper>
+      <config>res:/resources/mappers/httpMapper.xml</config>
+      <space>
+        <fileset>
+          <regex>res:/resources/mappers/.*xml</regex>
+        </fileset>
+        <import>
+          <uri>urn:org:netkernel:lang:groovy</uri>
+        </import>
+      </space>
+    </mapper>
+
+    <!-- Import ourselves into the Front End Fulcrum -->
+    <fileset>
+      <regex>res:/etc/system/SimpleDynamicImportHook.xml</regex>
+    </fileset>
+  </rootspace>
+
+</module>
