@@ -1,7 +1,8 @@
-This is a plugin for NetKernel
+The NetKernelROC community plugin for NetKernel development
 
 
-An example build.gradle is:
+The simplest use requires the following build.gradle file:
+
 
 apply plugin: 'netkernel'
 
@@ -10,17 +11,19 @@ buildscript {
     mavenLocal()
   }
   dependencies {
-  classpath group: 'org.netkernelroc.gradle', name: 'netkernel-gradle-plugin', version: '0.0.1-SNAPSHOT'
+  classpath group: 'org.netkernelroc.gradle', name: 'netkernel-gradle-plugin', version: '0.0.3-SNAPSHOT'
   }
 }
 
-project.ext.netkernelModules = [
-    "urn:com:bbyopen:metis:di:product", 
-    "urn:com:bbyopen:metis:di:review"
-  ]
-project.ext.installModules = [
-    "urn:com:bbyopen:metis:di:product"
-  ]
+To create a sample NetKernel module:
 
-Notice that project.ext.netkernelModules must list all modules under Gradle management
-Notice that project.ext.installModules includes the set of all modules that are to be installed in a running instance of NetKernel.
+gradle createNetKernelModules
+
+This will install a standard set of module templates into ~/.gradle/netkernelroc/templates/standard and then
+create a module in the directory:
+
+urn.org.netkernelroc.sample
+
+This module imports itself into the front end fulcrum and provides a resource at http://localhost:8080/hello
+
+
