@@ -1,5 +1,7 @@
 package org.netkernelroc.gradle.util
 
+import groovy.io.FileType
+
 /**
  * Helper for FileSystem-related activities.
  */
@@ -25,6 +27,53 @@ class FileSystemHelper {
    */
   def gradleHomeDir() {
     return "${System.properties['user.home']}/.gradle"
+  }
+
+  boolean removeDirectory(File directory) {
+
+    if (directory == null) {
+      return false
+    }
+    if (!directory.exists()) {
+      return true
+    }
+    if (!directory.isDirectory()) {
+      return false
+    }
+
+    String[] list = directory.list();
+
+    // Some JVMs return null for File.list() when the
+    // directory is empty.
+    if (list != null) {
+      for (int i = 0; i < list.length; i++) {
+        File entry = new File(directory, list[i]);
+
+        //        System.out.println("\tremoving entry " + entry);
+
+        if (entry.isDirectory()) {
+          if (!removeDirectory(entry)) {
+            return false
+          }
+        } else {
+          if (!entry.delete()) {
+            return false
+          }
+        }
+      }
+    }
+
+    return directory.delete();
+  }
+
+  /**
+   * Refactor this!
+   *
+   * @param dirName
+   * @return
+   */
+  def createDir(String dirName) {
+    createDirectory(dirName)
   }
 
   /**
@@ -76,4 +125,33 @@ class FileSystemHelper {
     retValue = f.createNewFile()
     retValue
   }
+
+  /**
+   * Returns a list of directory names for the NetKernel modules
+   *
+   */
+  def netkernelModuleNames() {
+    def names = []
+    def projectDirectory = System.getProperty("user.dir")
+    def dir = new File(projectDirectory)
+    dir.traverse(type: FileType.DIRECTORIES, maxDepth: 0) { directory ->
+      if (directory.name.startsWith("urn")) {
+        names.add(directory.name)
+      }
+    }
+    names
+  }
+
+  /**
+   * Returns the name of the project.
+   *
+   * By default, this is the directory name containing the project
+   *
+   */
+  def projectName() {
+    def projectDirectory = System.getProperty("user.dir")
+    def projectName = projectDirectory.split("/").last()
+    projectName
+  }
+
 }
