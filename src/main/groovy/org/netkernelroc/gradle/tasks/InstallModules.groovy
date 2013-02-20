@@ -32,21 +32,17 @@ class InstallModules extends DefaultTask {
     dir.traverse(type: FileType.DIRECTORIES,
         maxDepth: 0) { directory ->
       if (directory.name.startsWith("urn")) {
-        println "Adding ${projectDirectory}/${directory.name}"
         def node = new XmlParser().parseText("<module runlevel='7'>" + projectDirectory + "/" + directory.name + "/</module>")
         modules.append(node)
       }
     }
     def String installLocation = project.nkHelper.whereIsNetKernelInstalled()
-    println installLocation
     def String moduleExtensionDirectory = project.nkHelper.whereIsModuleExtensionDirectory()
-    println moduleExtensionDirectory
     def netkernelRunning = true
 
     if (netkernelRunning) {
       String moduleXMLFileName = installLocation + moduleExtensionDirectory + "/" + projectName + '.xml'
       // Test if the modules.d file is already present (pre-condition is that it must not be)
-      println installLocation + moduleExtensionDirectory + "/" + projectName + ".xml"
       File file1 = new File(moduleXMLFileName)
 
       if (!file1.exists()) {
@@ -57,9 +53,10 @@ class InstallModules extends DefaultTask {
         xmlWriter.setPreserveWhitespace(true)
         xmlWriter.setQuote("'")
         xmlWriter.print(modules)
+        println "Adding modules.d control file ${projectName}.xml"
 
       } else {
-        println "The modules.d control file already exists"
+        println "The modules.d control file ${projectName}.xml already exists."
       }
 
     }
