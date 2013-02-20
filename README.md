@@ -11,7 +11,7 @@ buildscript {
     mavenLocal()
   }
   dependencies {
-  classpath group: 'org.netkernelroc.gradle', name: 'netkernel-gradle-plugin', version: '0.0.3-SNAPSHOT'
+  classpath group: 'org.netkernelroc.gradle', name: 'netkernel-gradle-plugin', version: '0.0.4-SNAPSHOT'
   }
 }
 
