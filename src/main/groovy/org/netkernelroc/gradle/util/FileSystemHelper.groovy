@@ -1,5 +1,7 @@
 package org.netkernelroc.gradle.util
 
+import groovy.io.FileType
+
 /**
  * Helper for FileSystem-related activities.
  */
@@ -76,4 +78,33 @@ class FileSystemHelper {
     retValue = f.createNewFile()
     retValue
   }
+
+  /**
+   * Returns a list of directory names for the NetKernel modules
+   *
+   */
+  def netkernelModuleNames() {
+    def names = []
+    def projectDirectory = System.getProperty("user.dir")
+    def dir = new File(projectDirectory)
+    dir.traverse(type: FileType.DIRECTORIES, maxDepth: 0) { directory ->
+      if (directory.name.startsWith("urn")) {
+        names.add(directory.name)
+      }
+    }
+    names
+  }
+
+  /**
+   * Returns the name of the project.
+   *
+   * By default, this is the directory name containing the project
+   *
+   */
+  def projectName() {
+    def projectDirectory = System.getProperty("user.dir")
+    def projectName = projectDirectory.split("/").last()
+    projectName
+  }
+
 }

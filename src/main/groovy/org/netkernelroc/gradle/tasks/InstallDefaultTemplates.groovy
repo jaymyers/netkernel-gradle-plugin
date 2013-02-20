@@ -2,7 +2,7 @@ package org.netkernelroc.gradle.tasks
 
 import org.gradle.api.DefaultTask
 
-class InstallTemplates extends DefaultTask {
+class InstallDefaultTemplates extends DefaultTask {
 
   /**
    * This code is going to start out pretty dumb...

@@ -25,13 +25,6 @@ class CreateNetKernelModules extends DefaultTask {
       project.file("${moduleDirectory}/module.xml").write(moduleTemplate)
     }
 
-
-
-
-
-
-
-
 //    project.ext.nkM.each { moduleURI, map ->
 //
 //
