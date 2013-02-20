@@ -25,6 +25,8 @@ class NetKernelPlugin implements Plugin<Project> {
     p.tasks.add(name: 'removeNetKernelModules', type: RemoveModules, description: "Removes modules from the currently running NetKernel.")
     p.tasks.add(name: 'removeAllNetKernelModules', type: RemoveAllModules, description: "Removes all modules from currently running NetKernel.")
     p.tasks.add(name: 'createNetKernelModules', type: CreateNetKernelModules, description: "Create NetKernel modules from templates.")
+    p.tasks.add(name: 'createIntelliJProject', type: CreateIntelliJProject, description: "Create an IntelliJ project for these modules.")
+    p.tasks.add(name: 'removeIntelliJProject', type: RemoveIntelliJProject, description: "Removes any IntelliJ project files.")
 
     //p.tasks.add(name: 'report', type: ReportAndExperiment, description: "Experimenting with Gradle.")
 

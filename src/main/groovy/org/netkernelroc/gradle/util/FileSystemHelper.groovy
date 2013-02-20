@@ -29,6 +29,53 @@ class FileSystemHelper {
     return "${System.properties['user.home']}/.gradle"
   }
 
+  boolean removeDirectory(File directory) {
+
+    if (directory == null) {
+      return false
+    }
+    if (!directory.exists()) {
+      return true
+    }
+    if (!directory.isDirectory()) {
+      return false
+    }
+
+    String[] list = directory.list();
+
+    // Some JVMs return null for File.list() when the
+    // directory is empty.
+    if (list != null) {
+      for (int i = 0; i < list.length; i++) {
+        File entry = new File(directory, list[i]);
+
+        //        System.out.println("\tremoving entry " + entry);
+
+        if (entry.isDirectory()) {
+          if (!removeDirectory(entry)) {
+            return false
+          }
+        } else {
+          if (!entry.delete()) {
+            return false
+          }
+        }
+      }
+    }
+
+    return directory.delete();
+  }
+
+  /**
+   * Refactor this!
+   *
+   * @param dirName
+   * @return
+   */
+  def createDir(String dirName) {
+    createDirectory(dirName)
+  }
+
   /**
    * Create a directory if it doesn't exist.
    * @param dirName an absolute filename
