@@ -29,7 +29,7 @@ class NetKernelPlugin implements Plugin<Project> {
     p.tasks.add(name: 'installTemplates', type: InstallTemplates, description: "Install NetKernel module templates.")
     p.tasks.add(name: 'createNetKernelModules', type: CreateNetKernelModules, description: "Create NetKernel modules from templates.")
 
-    p.tasks.add(name: 'report', type: ReportAndExperiment, description: "Experimenting with Gradle.")
+    //p.tasks.add(name: 'report', type: ReportAndExperiment, description: "Experimenting with Gradle.")
 
     p.tasks.add(name: 'runNetKernelJar', type: RunNKSEJar) {
       workingDir "${project.fsHelper.gradleHomeDir()}/netkernel"
