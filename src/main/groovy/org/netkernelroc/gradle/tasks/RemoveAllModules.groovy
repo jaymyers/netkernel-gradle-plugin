@@ -20,7 +20,7 @@ class RemoveAllModules extends DefaultTask {
       File modulesD = new File(installLocation + moduleExtensionDirectory)
       modulesD.listFiles().each { File file ->
         if (!file.isDirectory()){
-        println "Removing modules defined in ${file.name}"
+        println "Removing modules.d control file ${file.name}"
         file.delete()
         }
       }

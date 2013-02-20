@@ -5,61 +5,75 @@ package org.netkernelroc.gradle.util
  */
 class FileSystemHelper {
 
-    /**
-     * Get the Gradle Home directory for this user.
-     * @return the current user's Gradle home dir
-     */
-    def gradleHomeDir() {
-        return "${System.properties['user.home']}/.gradle"
+  /**
+   * Converts a string with a URN (with colons) to a directory path (with periods)
+   */
+  def convertURNtoPath(String urn) {
+    return urn.replaceAll(":", ".")
+  }
+
+  boolean existsDir(String dir) {
+    File fileDir = new File(dir)
+    return fileDir.exists()
+  }
+
+
+
+  /**
+   * Get the Gradle Home directory for this user.
+   * @return the current user's Gradle home dir
+   */
+  def gradleHomeDir() {
+    return "${System.properties['user.home']}/.gradle"
+  }
+
+  /**
+   * Create a directory if it doesn't exist.
+   * @param dirName an absolute filename
+   * @return an indicator of success (true if it existed or is created)
+   */
+  def createDirectory(String dirName) {
+    boolean retValue = false
+
+    def f = new File(dirName)
+    retValue = f.isDirectory() && f.exists()
+
+    if (!retValue) {
+      retValue = f.mkdirs()
     }
 
-    /**
-     * Create a directory if it doesn't exist.
-     * @param dirName an absolute filename
-     * @return an indicator of success (true if it existed or is created)
-     */
-    def createDirectory(String dirName) {
-        boolean retValue = false
+    retValue
+  }
 
-        def f = new File(dirName)
-        retValue = f.isDirectory() && f.exists()
+  /**
+   * Create a directory in the Gradle Home Directory ("$user.dir"/.gradle)
+   * @param dirName a relative filename
+   */
+  def createGradleHomeDirectory(String dirName) {
+    def dir = "${gradleHomeDir()}/$dirName"
+    return createDirectory(dir)
+  }
 
-        if(!retValue) {
-            retValue = f.mkdirs()
-        }
+  /**
+   * Determine if a directory exists.
+   */
 
-        retValue
-    }
+  def gradleHomeDirectoryExists(String dirName) {
+    def dir = "${gradleHomeDir()}/$dirName"
+    new File(dir).exists()
+  }
 
-    /**
-     * Create a directory in the Gradle Home Directory ("$user.dir"/.gradle)
-     * @param dirName a relative filename
-     */
-    def createGradleHomeDirectory(String dirName) {
-        def dir = "${gradleHomeDir()}/$dirName"
-        return createDirectory(dir)
-    }
+  /**
+   * Create a file if it doesn't exist.
+   * @param fileName an absolute filename
+   * @return an indicator of success (true if it existed or is created)
+   */
 
-    /**
-     * Determine if a directory exists.
-     */
+  def createFile(String fileName) {
+    boolean retValue = false
 
-    def gradleHomeDirectoryExists(String dirName) {
-        def dir = "${gradleHomeDir()}/$dirName"
-        new File(dir).exists()
-    }
-
-    /**
-     * Create a file if it doesn't exist.
-     * @param fileName an absolute filename
-     * @return an indicator of success (true if it existed or is created)
-     */
-
-    def createFile(String fileName) {
-        boolean retValue = false
-
-        def f = new File(fileName)
-        retValue = f.createNewFile()
-        retValue
-    }
+    def f = new File(fileName)
+    retValue = f.createNewFile()
+    retValue
+  }
 }

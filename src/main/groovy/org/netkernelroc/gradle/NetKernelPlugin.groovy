@@ -1,5 +1,6 @@
 package org.netkernelroc.gradle
 
+import org.netkernelroc.gradle.tasks.CreateNetKernelModules
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.Task
@@ -25,6 +26,10 @@ class NetKernelPlugin implements Plugin<Project> {
     p.tasks.add(name: 'installNetKernelModules', type: InstallModules, description: "Installs modules in the currently running NetKernel.")
     p.tasks.add(name: 'removeNetKernelModules', type: RemoveModules, description: "Removes modules from the currently running NetKernel.")
     p.tasks.add(name: 'removeAllNetKernelModules', type: RemoveAllModules, description: "Removes all modules from currently running NetKernel.")
+    p.tasks.add(name: 'installTemplates', type: InstallTemplates, description: "Install NetKernel module templates.")
+    p.tasks.add(name: 'createNetKernelModules', type: CreateNetKernelModules, description: "Create NetKernel modules from templates.")
+
+    //p.tasks.add(name: 'report', type: ReportAndExperiment, description: "Experimenting with Gradle.")
 
     p.tasks.add(name: 'runNetKernelJar', type: RunNKSEJar) {
       workingDir "${project.fsHelper.gradleHomeDir()}/netkernel"
@@ -52,5 +57,6 @@ class NetKernelPlugin implements Plugin<Project> {
     }
 
     p.tasks.installNetKernelJar.dependsOn "downloadNetKernel"
+    p.tasks.createNetKernelModules.dependsOn "installTemplates"
   }
 }
