@@ -58,3 +58,13 @@ to inform NetKernel about your modules.
 
 Once this completed, you request the URL http://localhost:8080/hello to run the endpoint in the sample module.
 
+IntelliJ Support
+----------------
+
+The task createIntelliJProject and removeIntelliJProject will create an .idea/ based project structure and
+include each NetKernel module as an IntelliJ project.
+
+NB: Remember to add .idea/ and *.iml to .gitignore to prevent IntelliJ project files from being added to
+the project repository.
+
+
