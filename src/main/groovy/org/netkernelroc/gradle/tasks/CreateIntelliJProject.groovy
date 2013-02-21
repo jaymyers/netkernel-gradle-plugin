@@ -63,63 +63,67 @@ class CreateIntelliJProject extends DefaultTask {
   }
 
 
-  String vcsXML = """<?xml version="1.0" encoding="UTF-8"?>
-  <project version="4">
-    <component name="VcsDirectoryMappings">
-      <mapping directory="" vcs="" />
-    </component>
-  </project>
+  String vcsXML = """
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="" />
+  </component>
+</project>
   """
 
 
-  String moduleIMLXML = """<?xml version="1.0" encoding="UTF-8"?>
-  <module type="JAVA_MODULE" version="4">
-    <component name="NewModuleRootManager" inherit-compiler-output="false">
-      <output url="file://\$MODULE_DIR\$" />
-      <output-test url="file://\$MODULE_DIR\$" />
-      <content url="file://\$MODULE_DIR\$">
-        <sourceFolder url="file://\$MODULE_DIR\$" isTestSource="false" />
-      </content>
-      <orderEntry type="inheritedJdk" />
-      <orderEntry type="sourceFolder" forTests="false" />
-    </component>
-  </module>"""
+  String moduleIMLXML = """
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://\$MODULE_DIR\$" />
+    <output-test url="file://\$MODULE_DIR\$" />
+    <content url="file://\$MODULE_DIR\$">
+      <sourceFolder url="file://\$MODULE_DIR\$" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>"""
 
 
-  String scopeSettingsXML = """<component name="DependencyValidationManager">
+  String scopeSettingsXML = """
+<component name="DependencyValidationManager">
   <state>
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </state>
 </component>"""
 
-  String uiDesignerXML = """<?xml version="1.0" encoding="UTF-8"?>
-  <project version="4">
-    <component name="Palette2">
-      <group name="Swing">
-        <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
-          <default-constraints vsize-policy="1" hsize-policy="6" anchor="0" fill="1" />
-        </item>
-        <item class="com.intellij.uiDesigner.VSpacer" tooltip-text="Vertical Spacer" icon="/com/intellij/uiDesigner/icons/vspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
-          <default-constraints vsize-policy="6" hsize-policy="1" anchor="0" fill="2" />
-        </item>
-        <item class="javax.swing.JPanel" icon="/com/intellij/uiDesigner/icons/panel.png" removable="false" auto-create-binding="false" can-attach-label="false">
-          <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3" />
-        </item>
-        <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.png" removable="false" auto-create-binding="false" can-attach-label="true">
-          <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3" />
-        </item>
-        <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.png" removable="false" auto-create-binding="true" can-attach-label="false">
-          <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
-          <initial-values>
-            <property name="text" value="Button" />
-          </initial-values>
-        </item>
-        <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.png" removable="false" auto-create-binding="true" can-attach-label="false">
-          <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
-          <initial-values>
-            <property name="text" value="RadioButton" />
-          </initial-values>
-        </item>
+  String uiDesignerXML = """
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Palette2">
+    <group name="Swing">
+      <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
+        <default-constraints vsize-policy="1" hsize-policy="6" anchor="0" fill="1" />
+      </item>
+      <item class="com.intellij.uiDesigner.VSpacer" tooltip-text="Vertical Spacer" icon="/com/intellij/uiDesigner/icons/vspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
+        <default-constraints vsize-policy="6" hsize-policy="1" anchor="0" fill="2" />
+      </item>
+      <item class="javax.swing.JPanel" icon="/com/intellij/uiDesigner/icons/panel.png" removable="false" auto-create-binding="false" can-attach-label="false">
+        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3" />
+      </item>
+      <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.png" removable="false" auto-create-binding="false" can-attach-label="true">
+        <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3" />
+      </item>
+      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
+        <initial-values>
+          <property name="text" value="Button" />
+        </initial-values>
+      </item>
+      <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+        <initial-values>
+          <property name="text" value="RadioButton" />
+        </initial-values>
+      </item>
         <item class="javax.swing.JCheckBox" icon="/com/intellij/uiDesigner/icons/checkBox.png" removable="false" auto-create-binding="true" can-attach-label="false">
           <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
           <initial-values>
@@ -180,42 +184,42 @@ class CreateIntelliJProject extends DefaultTask {
             <preferred-size width="150" height="50" />
           </default-constraints>
         </item>
-        <item class="javax.swing.JTabbedPane" icon="/com/intellij/uiDesigner/icons/tabbedPane.png" removable="false" auto-create-binding="true" can-attach-label="false">
-          <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
-            <preferred-size width="200" height="200" />
-          </default-constraints>
-        </item>
-        <item class="javax.swing.JSplitPane" icon="/com/intellij/uiDesigner/icons/splitPane.png" removable="false" auto-create-binding="false" can-attach-label="false">
-          <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
-            <preferred-size width="200" height="200" />
-          </default-constraints>
-        </item>
-        <item class="javax.swing.JSpinner" icon="/com/intellij/uiDesigner/icons/spinner.png" removable="false" auto-create-binding="true" can-attach-label="true">
-          <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
-        </item>
-        <item class="javax.swing.JSlider" icon="/com/intellij/uiDesigner/icons/slider.png" removable="false" auto-create-binding="true" can-attach-label="false">
-          <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
-        </item>
-        <item class="javax.swing.JSeparator" icon="/com/intellij/uiDesigner/icons/separator.png" removable="false" auto-create-binding="false" can-attach-label="false">
-          <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3" />
-        </item>
-        <item class="javax.swing.JProgressBar" icon="/com/intellij/uiDesigner/icons/progressbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
-          <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1" />
-        </item>
-        <item class="javax.swing.JToolBar" icon="/com/intellij/uiDesigner/icons/toolbar.png" removable="false" auto-create-binding="false" can-attach-label="false">
-          <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1">
-            <preferred-size width="-1" height="20" />
-          </default-constraints>
-        </item>
-        <item class="javax.swing.JToolBar\$Separator" icon="/com/intellij/uiDesigner/icons/toolbarSeparator.png" removable="false" auto-create-binding="false" can-attach-label="false">
-          <default-constraints vsize-policy="0" hsize-policy="0" anchor="0" fill="1" />
-        </item>
-        <item class="javax.swing.JScrollBar" icon="/com/intellij/uiDesigner/icons/scrollbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
-          <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
-        </item>
-      </group>
-    </component>
-  </project>"""
+      <item class="javax.swing.JTabbedPane" icon="/com/intellij/uiDesigner/icons/tabbedPane.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+          <preferred-size width="200" height="200" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JSplitPane" icon="/com/intellij/uiDesigner/icons/splitPane.png" removable="false" auto-create-binding="false" can-attach-label="false">
+        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+          <preferred-size width="200" height="200" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JSpinner" icon="/com/intellij/uiDesigner/icons/spinner.png" removable="false" auto-create-binding="true" can-attach-label="true">
+        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+      </item>
+      <item class="javax.swing.JSlider" icon="/com/intellij/uiDesigner/icons/slider.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+      </item>
+      <item class="javax.swing.JSeparator" icon="/com/intellij/uiDesigner/icons/separator.png" removable="false" auto-create-binding="false" can-attach-label="false">
+        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3" />
+      </item>
+      <item class="javax.swing.JProgressBar" icon="/com/intellij/uiDesigner/icons/progressbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1" />
+      </item>
+      <item class="javax.swing.JToolBar" icon="/com/intellij/uiDesigner/icons/toolbar.png" removable="false" auto-create-binding="false" can-attach-label="false">
+        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1">
+          <preferred-size width="-1" height="20" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JToolBar\$Separator" icon="/com/intellij/uiDesigner/icons/toolbarSeparator.png" removable="false" auto-create-binding="false" can-attach-label="false">
+        <default-constraints vsize-policy="0" hsize-policy="0" anchor="0" fill="1" />
+      </item>
+      <item class="javax.swing.JScrollBar" icon="/com/intellij/uiDesigner/icons/scrollbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
+      </item>
+    </group>
+  </component>
+</project>"""
 
 
   String miscXML = """<?xml version="1.0" encoding="UTF-8"?>
@@ -290,42 +294,45 @@ class CreateIntelliJProject extends DefaultTask {
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
 </project>
 """
-  String antXML = """
-  <?xml version="1.0" encoding="UTF-8"?>
-  <project version="4">
-    <component name="AntConfiguration">
-      <defaultAnt bundledAnt="true" />
-    </component>
-  </project>
+
+String antXML = """
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AntConfiguration">
+    <defaultAnt bundledAnt="true" />
+  </component>
+</project>
+"""
+
+  String compilerXML = """
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <option name="DEFAULT_COMPILER" value="Javac" />
+    <resourceExtensions />
+    <wildcardResourcePatterns>
+      <entry name="?*.properties" />
+      <entry name="?*.xml" />
+      <entry name="?*.gif" />
+      <entry name="?*.png" />
+      <entry name="?*.jpeg" />
+      <entry name="?*.jpg" />
+      <entry name="?*.html" />
+      <entry name="?*.dtd" />
+      <entry name="?*.tld" />
+      <entry name="?*.ftl" />
+    </wildcardResourcePatterns>
+    <annotationProcessing enabled="false" useClasspath="true" />
+  </component>
+</project>
   """
 
-  String compilerXML = """<?xml version="1.0" encoding="UTF-8"?>
-  <project version="4">
-    <component name="CompilerConfiguration">
-      <option name="DEFAULT_COMPILER" value="Javac" />
-      <resourceExtensions />
-      <wildcardResourcePatterns>
-        <entry name="?*.properties" />
-        <entry name="?*.xml" />
-        <entry name="?*.gif" />
-        <entry name="?*.png" />
-        <entry name="?*.jpeg" />
-        <entry name="?*.jpg" />
-        <entry name="?*.html" />
-        <entry name="?*.dtd" />
-        <entry name="?*.tld" />
-        <entry name="?*.ftl" />
-      </wildcardResourcePatterns>
-      <annotationProcessing enabled="false" useClasspath="true" />
-    </component>
-  </project>
-  """
-
-  String profilesSettingsXML = """<component name="CopyrightManager">
-   <settings default="">
-     <module2copyright />
-   </settings>
- </component>"""
+  String profilesSettingsXML = """
+<component name="CopyrightManager">
+  <settings default="">
+    <module2copyright />
+  </settings>
+</component>"""
 
   String encodingsXML = """<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
@@ -334,10 +341,11 @@ class CreateIntelliJProject extends DefaultTask {
 
 """
 
-  String gradleSettingsXML = """<?xml version="1.0" encoding="UTF-8"?>
+  String gradleSettingsXML = """
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="GradleSettings">
-    <option name="gradleHome" value="\$USER_HOME\$/bin/gradle-1.2" />
+    <option name="gradleHome" value="\$USER_HOME\$/bin/gradle-1.4" />
   </component>
 </project>
 """
