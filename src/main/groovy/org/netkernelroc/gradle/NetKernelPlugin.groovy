@@ -42,6 +42,10 @@ class NetKernelPlugin implements Plugin<Project> {
 
 
 
+        //p.tasks.add(name: 'checkNetKernelInstallation', type: CheckNetKernelInstallation)
+
+        p.tasks.installNetKernelJar.dependsOn "downloadNetKernel"
+
     p.tasks.add(name: 'runNetKernelJar', type: RunNKSEJar) {
       workingDir "${project.fsHelper.gradleHomeDir()}/netkernel"
       commandLine '/usr/bin/java', '-jar', "${project.fsHelper.gradleHomeDir()}/downloads/1060-NetKernel-SE-5.1.1.jar"

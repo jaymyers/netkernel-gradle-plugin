@@ -1,0 +1,11 @@
+apply plugin: 'netkernel'
+
+buildscript {
+ repositories {
+    mavenLocal()
+    mavenCentral()
+ }
+ dependencies {
+ classpath group: 'org.netkernelroc.gradle', name: 'netkernel-gradle-plugin', version: '0.0.5-SNAPSHOT'
+ }
+}
