@@ -1,7 +1,7 @@
 NetKernel Gradle plugin
 =======================
 
-This is the KernelROC community plugin for NetKernel development with Gradle.
+This is the NetKernelROC community plugin for NetKernel development with Gradle.
 
 Get the Plugin
 --------------
@@ -41,32 +41,29 @@ Install the module template files:
 
 Now, in the project directory:
 
-To create a sample NetKernel module:
-
-```gradle installTemplates```
-
-Create a sample NetKernel module from a template:
+To create a sample NetKernel module from a template:
 
 ```gradle createNetKernelModules```
 
-This will create a directory urn.org.netkernelroc.sample and insert a module.xml file. This is a ready-to-use
+This will create the directory urn.org.netkernelroc.sample in your project directory. The module.xml for the
+NetKernel module will be based on a simple example template. This is a ready-to-use
 NetKernel module.
 
 With NetKernel running, issue the following:
 
 ```gradle installNetKernelModules```
 
-to inform NetKernel about your modules.
+to install the module in NetKernel. (This uses the modules.d extension feature, which must be enabled.
+(More documentation on this will be coming later).
 
 Once this completed, you request the URL http://localhost:8080/hello to run the endpoint in the sample module.
 
 IntelliJ Support
 ----------------
 
-The task createIntelliJProject and removeIntelliJProject will create an .idea/ based project structure and
-include each NetKernel module as an IntelliJ project.
+The task createIntelliJProject and removeIntelliJProject will create an IntelliJ project structure within your project.
+This task creates a hidden subdirectory .idea and adds an *.iml file in each module.
+
 
 NB: Remember to add .idea/ and *.iml to .gitignore to prevent IntelliJ project files from being added to
 the project repository.
-
-
