@@ -11,7 +11,7 @@ Get the Plugin
 
 From the repo issue this command to install the plugin:
 
-```gradle install```
+``gradle install``
 
 The current version number is 0.0.5-SNAPSHOT
 
