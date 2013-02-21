@@ -10,8 +10,16 @@ repositories {
     }
 }
 
+sourceSets {
+  main {
+    resources {
+      srcDir 'src/main/resources'
+    }
+  }
+}
+
 group = 'org.netkernelroc.gradle'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.5-SNAPSHOT'
 
 dependencies {
     compile gradleApi()
