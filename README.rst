@@ -27,17 +27,32 @@ This task creates a new NetKernel module based on a template module directory.
 
 The parameters used by this task are:
 
-  =========              ===========              ===============================
-  Parameter              Description              Default
-  ========               ===========              ===============================
-  moduleURI              a                        urn:org:netkernelroc:sample
-  moduleTemplate         s                        simple
-  templateLibrary        d                        default
-  templateDirectory      f                        ~/.gradle/netkernelroc/templates
-  =================      ===========              =================================
+==================    ================================  ===========
+Parameter             Default                           Description
+==================    ================================  ===========
+moduleURI             urn:org:netkernelroc:sample       The URI identifier for the module
+moduleTemplate        simple                            The particular template in the specified library
+templateLibrary       default                           The name of the template library within the directory
+templateDirectory     ~/.gradle/netkernelroc/templates  The location of the template library (Must be absolute in this release)
+==================    ================================  ===========
+
+Gradle will load parameter information from a variety of sources.
+For example, the file ~/.gradle/gradle.properties could have the following entries::
+
+  templateDirectory=/Users/randy/development/source/templates
+  templateLibrary=databliss
+
+which would allow a user to use the same set of templates and provide only the URI and specific template
+throught he command line::
+
+  gradle cNKM -PmoduleURI=urn:org:netkernelroc:sample:sample2 -PmoduleTemplate=complete
+
+
 
 installNetKernelModules (iNKM)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
 
 removeNetKernelModules (rNKM)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
