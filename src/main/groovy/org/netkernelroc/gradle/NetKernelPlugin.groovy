@@ -28,7 +28,7 @@ class NetKernelPlugin implements Plugin<Project> {
     p.tasks.add(name: 'createIntelliJProject', group: 'IntelliJ', type: CreateIntelliJProject, description: "Create an IntelliJ project configuration (.idea directory) for this project.")
     p.tasks.add(name: 'removeIntelliJProject', group:  'IntelliJ', type: RemoveIntelliJProject, description: "Remove all IntelliJ files (.idea directory and *.iml files).")
 
-    //p.tasks.add(name: 'report', type: ReportAndExperiment, description: "Experimenting with Gradle.")
+    p.tasks.add(name: 'report', group: 'Debug', type: ReportAndExperiment, description: "Experimenting with Gradle.")
 
     // These are tasks that others automatically depend on. They don't show up when you ask for a list of tasks
     p.tasks.add(name: 'installDefaultTemplates', type: InstallDefaultTemplates, description: "Install default NetKernel module templates.")

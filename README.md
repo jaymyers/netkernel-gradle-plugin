@@ -13,7 +13,7 @@ From the repo issue this command to install the plugin:
 
 ``gradle install``
 
-The current version number is 0.0.5-SNAPSHOT
+The current version number is 0.0.6-SNAPSHOT
 
 Using the Plugin
 ----------------

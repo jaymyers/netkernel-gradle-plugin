@@ -35,7 +35,7 @@ class NetKernelHelper {
    *
    *
    */
-  def converURNtoPath(String urn) {
+  def convertURNtoPath(String urn) {
     return urn.replaceAll(":", ".")
   }
 

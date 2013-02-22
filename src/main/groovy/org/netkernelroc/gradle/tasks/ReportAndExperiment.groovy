@@ -12,7 +12,25 @@ class ReportAndExperiment extends DefaultTask {
 
     ExtensionContainer e = project.getExtensions()
     ExtraPropertiesExtension ep = e.getExtraProperties()
-    println ep.has('nkM')
+
+    ep.getProperties().each {key, value  ->
+      println "${key}/${value}"
+    }
+    println "experimenting with Files and Directories"
+
+    def sourceDirectory = ep.getProperties()['directory']
+
+    def dir = new File(sourceDirectory)
+    def files = []
+    dir.eachFileRecurse {files += it }
+    files.each {file ->
+      println file.path
+      println file.name
+    }
+
+//    println "There is an extension property uri - ${ep.has('uri')}. It's value is ${project.uri}"
+//    println "There is an extension property template - ${ep.has('template')}. It's value is ${project.template}"
+
 
 
 
