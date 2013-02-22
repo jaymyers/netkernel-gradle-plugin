@@ -17,8 +17,8 @@ installNetKernelModule task.
 
 
 
-Tasks
------
+Utility Tasks
+-------------
 
 createNetKernelModules (cNKM)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -52,15 +52,53 @@ throught he command line::
 installNetKernelModules (iNKM)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+This task installs all project modules into the currently running instance of NetKernel.
+
+
+
+Note: An instance of NetKernel must be running and it must have the modules.d extension enabled for this task to work.
+
 
 
 removeNetKernelModules (rNKM)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+This task removes all project modules from the currently running instance of NetKernel.
+
+Note: An instance of NetKernel must be running for this task to work.
+
 
 removeAllNetKernelModules (rANKM)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+This task removes all modules installed in the currently running instance of NetKernel - even if they
+were install manually or by other projects.
+This should be used to restore NetKernel to an original configuration.
+
+Note: An instance of NetKernel must be running for this task to work.
+
+
+
+IntelliJ Tasks
+--------------
+
+createIntelliJProject (cIJP)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This tasks creates a set of IntelliJ project control files such as the .idea hidden directory
+and an "*.iml" file for each NetKernel module.
+The whole Gradle project equates to an IntelliJ project and each NetKernel module equates
+to an IntelliJ module within the project.
+Once this task completes, within IntelliJ say File...Open... and reference the project directory.
+
+Remember to include IntelliJ project artifacts in your source control system ignore file (such as
+.gitignore for Git).
+
+removeIntelliJProject (rIJP)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This task removes all IntelliJ project control files such as the .idea directory and
+all *.iml files.
 
 
 
@@ -91,7 +129,7 @@ create a build.gradle file with the following contents::
       mavenLocal()
       }
     dependencies {
-      classpath group: 'org.netkernelroc.gradle', name: 'netkernel-gradle-plugin', version: '0.0.5-SNAPSHOT'
+      classpath group: 'org.netkernelroc.gradle', name: 'netkernel-gradle-plugin', version: '0.0.6-SNAPSHOT'
       }
   }
 
@@ -134,4 +172,5 @@ the project repository.
 Authors
 -------
 Randolph Kahle
+
 Brian Sletten
