@@ -1,15 +1,53 @@
 NetKernel Gradle plugin
 =======================
 
-A Gradle plugin providing tasks that make it easy to develop NetKernel modules.
+A Gradle plugin providing tasks that support rapid development of NetKernel modules.
+
+Each Gradle project can support one or more NetKernel modules.
+Following NetKernel conventions, each NetKernel module is identified
+by a URN, such as urn:org:netkernelroc:sample. Because operating systems
+have trouble with colons in file names, it is customary to substitute
+a period for the colons and therefore this plugin supports directory
+names such as urn.org.netkernelroc.sample.
+
+NetKernel development usually requires multiple modules and this plugin will support
+any number of module directories. The use of 'urn' as the beginning of
+each module directory name is significant for some tasks, such as the
+installNetKernelModule task.
+
+
 
 Tasks
 -----
 
-createNetKernelModules
-~~~~~~~~~~~~~~~~~~~~~~
+createNetKernelModules (cNKM)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is a very powerful task...
+This task creates a new NetKernel module based on a template module directory.
+
+The parameters used by this task are:
+
+  =========              ===========              ===============================
+  Parameter              Description              Default
+  ========               ===========              ===============================
+  moduleURI              a                        urn:org:netkernelroc:sample
+  moduleTemplate         s                        simple
+  templateLibrary        d                        default
+  templateDirectory      f                        ~/.gradle/netkernelroc/templates
+  =================      ===========              =================================
+
+installNetKernelModules (iNKM)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+removeNetKernelModules (rNKM)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+removeAllNetKernelModules (rANKM)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
 
 
 Get the Plugin
