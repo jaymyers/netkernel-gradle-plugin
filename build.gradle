@@ -19,7 +19,7 @@ sourceSets {
 }
 
 group = 'org.netkernelroc.gradle'
-version = '0.0.5-SNAPSHOT'
+version = '0.0.6-SNAPSHOT'
 
 dependencies {
     compile gradleApi()

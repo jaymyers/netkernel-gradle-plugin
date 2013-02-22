@@ -20,6 +20,20 @@ class FileSystemHelper {
   }
 
 
+  /**
+   * Given an absolute path for a file, switch the source and destination portions
+   * and return the new absolute path
+   *
+   * @param file
+   * @param oldPath
+   * @param newPath
+   * @return
+   */
+  String switchFilePath(String file, String oldPath, String newPath) {
+    return newPath + file.substring(oldPath.length(),file.length())
+  }
+
+
 
   /**
    * Get the Gradle Home directory for this user.

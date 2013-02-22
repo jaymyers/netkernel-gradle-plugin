@@ -20,21 +20,21 @@ class NetKernelPlugin implements Plugin<Project> {
     p.extensions.create("nkHelper", NetKernelHelper)
 
     // High level tasks
-    p.tasks.add(name: 'statusNetKernel', type: NetKernelStatus, description: "Reports on the status of the currently running NetKernel.")
-    p.tasks.add(name: 'installNetKernelModules', type: InstallModules, description: "Installs modules in the currently running NetKernel.")
-    p.tasks.add(name: 'removeNetKernelModules', type: RemoveModules, description: "Removes modules from the currently running NetKernel.")
-    p.tasks.add(name: 'removeAllNetKernelModules', type: RemoveAllModules, description: "Removes all modules from currently running NetKernel.")
-    p.tasks.add(name: 'createNetKernelModules', type: CreateNetKernelModules, description: "Create NetKernel modules from templates.")
-    p.tasks.add(name: 'createIntelliJProject', type: CreateIntelliJProject, description: "Create an IntelliJ project for these modules.")
-    p.tasks.add(name: 'removeIntelliJProject', type: RemoveIntelliJProject, description: "Removes any IntelliJ project files.")
+    p.tasks.add(name: 'statusNetKernel', group: 'NetKernel Management', type: NetKernelStatus, description: "Reports on the status of the currently running NetKernel.")
+    p.tasks.add(name: 'installNetKernelModules', group: 'NetKernel Management', type: InstallModules, description: "Installs project modules in the currently running NetKernel.")
+    p.tasks.add(name: 'removeNetKernelModules', group: 'NetKernel Management', type: RemoveModules, description: "Removes project modules from the currently running NetKernel.")
+    p.tasks.add(name: 'removeAllNetKernelModules', group:  'NetKernel Management', type: RemoveAllModules, description: "Removes all modules from any source from the currently running NetKernel.")
+    p.tasks.add(name: 'createNetKernelModules', group:  'Utility', type: CreateNetKernelModules, description: "Create one or more NetKernel modules for this project from templates.")
+    p.tasks.add(name: 'createIntelliJProject', group: 'IntelliJ', type: CreateIntelliJProject, description: "Create an IntelliJ project configuration (.idea directory) for this project.")
+    p.tasks.add(name: 'removeIntelliJProject', group:  'IntelliJ', type: RemoveIntelliJProject, description: "Remove all IntelliJ files (.idea directory and *.iml files).")
 
-    //p.tasks.add(name: 'report', type: ReportAndExperiment, description: "Experimenting with Gradle.")
+    p.tasks.add(name: 'report', group: 'Debug', type: ReportAndExperiment, description: "Experimenting with Gradle.")
 
     // These are tasks that others automatically depend on. They don't show up when you ask for a list of tasks
     p.tasks.add(name: 'installDefaultTemplates', type: InstallDefaultTemplates, description: "Install default NetKernel module templates.")
     p.tasks.createNetKernelModules.dependsOn "installDefaultTemplates"
 
-    p.tasks.add(name: 'installNetKernelJar', type: InstallNKSEJar) {
+    p.tasks.add(name: 'installNetKernelJar', group:  'Utility', type: InstallNKSEJar, description: 'Not sure!') {
       onlyIf { !project.fsHelper.gradleHomeDirectoryExists("/netkernel/install") }
     }
     p.tasks.add(name: 'downloadNetKernel', type: DownloadNKSE)
@@ -46,7 +46,7 @@ class NetKernelPlugin implements Plugin<Project> {
 
         p.tasks.installNetKernelJar.dependsOn "downloadNetKernel"
 
-    p.tasks.add(name: 'runNetKernelJar', type: RunNKSEJar) {
+    p.tasks.add(name: 'runNetKernelJar', group:  'Utility', type: RunNKSEJar, description:  'Not sure!') {
       workingDir "${project.fsHelper.gradleHomeDir()}/netkernel"
       commandLine '/usr/bin/java', '-jar', "${project.fsHelper.gradleHomeDir()}/downloads/1060-NetKernel-SE-5.1.1.jar"
       onlyIf { !project.nkHelper.isNetKernelRunning() }

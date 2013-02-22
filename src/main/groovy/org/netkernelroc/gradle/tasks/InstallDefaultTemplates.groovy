@@ -13,9 +13,10 @@ class InstallDefaultTemplates extends DefaultTask {
 
   @org.gradle.api.tasks.TaskAction
   void installTemplates() {
-    if (!project.fsHelper.gradleHomeDirectoryExists()) {
+    if (!project.fsHelper.gradleHomeDirectoryExists('netkernelroc/templates/default')) {
       project.fsHelper.createGradleHomeDirectory('netkernelroc/templates/default')
-      project.file(project.fsHelper.gradleHomeDir() + '/netkernelroc/templates/default/simple-module.xml').write(simpleModuleXML)
+      project.fsHelper.createGradleHomeDirectory('netkernelroc/templates/default/simple')
+      project.file(project.fsHelper.gradleHomeDir() + '/netkernelroc/templates/default/simple/module.xml').write(simpleModuleXML)
     }
   }
 
