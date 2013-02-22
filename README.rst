@@ -1,7 +1,13 @@
 NetKernel Gradle plugin
 =======================
 
-This is the NetKernelROC community plugin for NetKernel development with Gradle.
+A Gradle plugin providing tasks that make it easy to develop NetKernel modules.
+
+Tasks
+-----
+
+
+
 
 Get the Plugin
 --------------
@@ -67,3 +73,9 @@ This task creates a hidden subdirectory .idea and adds an *.iml file in each mod
 
 NB: Remember to add .idea/ and *.iml to .gitignore to prevent IntelliJ project files from being added to
 the project repository.
+
+Authors
+-------
+Randolph Kahle
+Brian Sletten
+
