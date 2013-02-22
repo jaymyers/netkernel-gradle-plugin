@@ -33,7 +33,7 @@ class CreateNetKernelModules extends DefaultTask {
     // Get user supplied template directory or use default
     String templateDirectory = project.fsHelper.gradleHomeDir() + '/netkernelroc/templates'
     if (properties.containsKey('templateDirectory')) {
-      templateDirectory = properties[templateDirectory]
+      templateDirectory = properties['templateDirectory']
     }
 
     // Check to see if the module directory already exists and exit if it does
@@ -49,6 +49,8 @@ class CreateNetKernelModules extends DefaultTask {
     String moduleDirectory = moduleURI.replaceAll(":", ".")
     String packageName = moduleDirectory.substring(4)
     String packagePath = packageName.replaceAll("\\.", "/")
+
+    project.fsHelper.createDirectory(targetDir)
 
     def sDir = new File(sourceDir)
     sDir.eachFileRecurse { file ->
