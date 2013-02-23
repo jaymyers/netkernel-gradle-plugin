@@ -54,6 +54,10 @@ listTemplates
 This task lists the module templates available in the location specified by the parameter 'templateDirectory' and
 'templateLibrary'.
 
+listTemplateLibraries
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This task lists the available template libraries in the location specified by the parameter 'templateDirectory'
+
 
 installNetKernelModules (iNKM)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

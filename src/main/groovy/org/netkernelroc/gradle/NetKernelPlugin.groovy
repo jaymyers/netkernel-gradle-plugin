@@ -25,7 +25,8 @@ class NetKernelPlugin implements Plugin<Project> {
     p.tasks.add(name: 'removeNetKernelModules', group: 'NetKernel Management', type: RemoveModules, description: "Removes project modules from the currently running NetKernel.")
     p.tasks.add(name: 'removeAllNetKernelModules', group:  'NetKernel Management', type: RemoveAllModules, description: "Removes all modules from any source from the currently running NetKernel.")
     p.tasks.add(name: 'createNetKernelModules', group:  'Utility', type: CreateNetKernelModules, description: "Create one or more NetKernel modules for this project from templates.")
-    p.tasks.add(name: 'ListTemplates', group:  'Utility', type: ListTemplates, description: "List available templates in a library.")
+    p.tasks.add(name: 'listTemplates', group:  'Utility', type: ListTemplates, description: "List available templates in a library.")
+    p.tasks.add(name: 'listTemplateLibraries', group:  'Utility', type: ListTemplateLibraries, description: "List available templates libraries.")
     p.tasks.add(name: 'createIntelliJProject', group: 'IntelliJ', type: CreateIntelliJProject, description: "Create an IntelliJ project configuration (.idea directory) for this project.")
     p.tasks.add(name: 'removeIntelliJProject', group:  'IntelliJ', type: RemoveIntelliJProject, description: "Remove all IntelliJ files (.idea directory and *.iml files).")
 

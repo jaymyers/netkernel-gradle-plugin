@@ -4,7 +4,7 @@ import org.gradle.api.DefaultTask
 import org.gradle.api.plugins.ExtensionContainer
 import org.gradle.api.plugins.ExtraPropertiesExtension
 
-class ListTemplates extends DefaultTask {
+class ListTemplateLibraries extends DefaultTask {
 
   @org.gradle.api.tasks.TaskAction void createNetKernelModules() {
 
@@ -38,31 +38,25 @@ class ListTemplates extends DefaultTask {
 
     if (!project.fsHelper.existsDir(templateDirectory)) {
       println "The specified template directory [${templateDirectory}] does not exist."
-    }
-    else {
+    } else {
       println ""
       println "Directory: ${templateDirectory}"
-      String templateLibraryDirectory = templateDirectory + '/' + templateLibrary
-      if (!project.fsHelper.existsDir(templateLibraryDirectory)){
-        println "The template Libary [${templateLibrary}] is not found in the template diretory"
-      }
-      else {
-        println "Library: ${templateLibrary}"
-        println ""
-        def tlDir = new File(templateLibraryDirectory)
-        tlDir.eachDir { dir ->
-          println "Template: ${dir.name}"
+      def tDir = new File(templateDirectory)
+      tDir.eachDir { dir ->
+        if (!dir.isHidden()) {
+          println ""
+          println "Template Library: ${dir.name}"
           println "-----------------------------"
           dir.eachFile { file ->
             if (file.name.toLowerCase().equals("readme")) {
               String readme = file.text
               println readme
-              println  ""
+              println ""
             }
           }
+
         }
       }
     }
   }
-
 }
