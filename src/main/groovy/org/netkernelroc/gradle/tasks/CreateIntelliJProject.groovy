@@ -63,8 +63,7 @@ class CreateIntelliJProject extends DefaultTask {
   }
 
 
-  String vcsXML = """
-<?xml version="1.0" encoding="UTF-8"?>
+  String vcsXML = """<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
@@ -73,8 +72,7 @@ class CreateIntelliJProject extends DefaultTask {
   """
 
 
-  String moduleIMLXML = """
-<?xml version="1.0" encoding="UTF-8"?>
+  String moduleIMLXML = """<?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="false">
     <output url="file://\$MODULE_DIR\$" />
@@ -88,15 +86,13 @@ class CreateIntelliJProject extends DefaultTask {
 </module>"""
 
 
-  String scopeSettingsXML = """
-<component name="DependencyValidationManager">
+  String scopeSettingsXML = """<component name="DependencyValidationManager">
   <state>
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </state>
 </component>"""
 
-  String uiDesignerXML = """
-<?xml version="1.0" encoding="UTF-8"?>
+  String uiDesignerXML = """<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Palette2">
     <group name="Swing">
@@ -295,8 +291,7 @@ class CreateIntelliJProject extends DefaultTask {
 </project>
 """
 
-String antXML = """
-<?xml version="1.0" encoding="UTF-8"?>
+String antXML = """<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AntConfiguration">
     <defaultAnt bundledAnt="true" />
@@ -304,8 +299,7 @@ String antXML = """
 </project>
 """
 
-  String compilerXML = """
-<?xml version="1.0" encoding="UTF-8"?>
+  String compilerXML = """<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Javac" />
@@ -327,8 +321,7 @@ String antXML = """
 </project>
   """
 
-  String profilesSettingsXML = """
-<component name="CopyrightManager">
+  String profilesSettingsXML = """<component name="CopyrightManager">
   <settings default="">
     <module2copyright />
   </settings>
@@ -341,8 +334,7 @@ String antXML = """
 
 """
 
-  String gradleSettingsXML = """
-<?xml version="1.0" encoding="UTF-8"?>
+  String gradleSettingsXML = """<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="GradleSettings">
     <option name="gradleHome" value="\$USER_HOME\$/bin/gradle-1.4" />
