@@ -58,6 +58,8 @@ class CreateNetKernelModules extends DefaultTask {
         project.fsHelper.createDirectory(project.fsHelper.switchFilePath(file.absolutePath, sourceDir, targetDir))
       } else {
         String template = file.text
+        template = template.replaceAll('MODULE_URI_WITHOUT_URN', moduleURI.substring(4))
+        template = template.replaceAll('MODULE_URI_CORE', moduleURI.substring(0,moduleURI.length()-5))
         template = template.replaceAll('MODULE_URI', moduleURI)
         template = template.replaceAll('MODULE_CLASSPATH', packagePath)
         project.file(project.fsHelper.switchFilePath(file.absolutePath, sourceDir, targetDir)).write(template)
