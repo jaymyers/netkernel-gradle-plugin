@@ -17,8 +17,8 @@ installNetKernelModule task.
 
 
 
-Utility Tasks
--------------
+Module Creation Tasks
+----------------------
 
 createNetKernelModules (cNKM)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -68,6 +68,8 @@ This task installs all project modules into the currently running instance of Ne
 
 Note: An instance of NetKernel must be running and it must have the modules.d extension enabled for this task to work.
 
+NetKernel Management Tasks
+--------------------------
 
 
 removeNetKernelModules (rNKM)
@@ -123,7 +125,7 @@ From the repo issue this command to install the plugin::
 
   gradle install
 
-The current version number is 0.0.6-SNAPSHOT
+The current version number is 0.1.0
 
 Using the Plugin
 ----------------
@@ -139,7 +141,7 @@ create a build.gradle file with the following contents::
       mavenLocal()
       }
     dependencies {
-      classpath group: 'org.netkernelroc.gradle', name: 'netkernel-gradle-plugin', version: '0.0.6-SNAPSHOT'
+      classpath group: 'org.netkernelroc.gradle', name: 'netkernel-gradle-plugin', version: '0.1.0'
       }
   }
 
