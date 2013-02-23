@@ -48,6 +48,12 @@ throught he command line::
   gradle cNKM -PmoduleURI=urn:org:netkernelroc:sample:sample2 -PmoduleTemplate=complete
 
 
+listTemplates
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This task lists the module templates available in the location specified by the parameter 'templateDirectory' and
+'templateLibrary'.
+
 
 installNetKernelModules (iNKM)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
