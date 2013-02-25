@@ -73,6 +73,28 @@ class NetKernelHelper {
         retValue
     }
 
+  def setNetKernelModulesExtensionDirectory() {
+    String netkernelInstallDir = whereIsNetKernelInstalled()
+    String netkernelProperties = netkernelInstallDir + '/etc/kernel.properties'
+    String modulesExtensionProperty = 'netkernel.init.modulesdir'
+
+    def props = new Properties()
+    new File(netkernelProperties).withInputStream { stream -> props.load(stream) }
+    if (null == props[modulesExtensionProperty]) {
+      println 'Adding modules.d support to NetKernel'
+      String properties = new File(netkernelProperties).text
+      properties = properties + modulesExtensionProperty + "=etc/modules.d\n"
+      new File(netkernelProperties).withWriter { writer -> writer.append(properties) }
+    } else {
+      if ('etc/modules.d'.equals(props[modulesExtensionProperty])) {
+        println 'NetKernel has proper support for the modules.d extension'
+      } else {
+        println 'NetKernel has proper support for the modules.d extension at ' + props[modulesExtensionProperty]
+      }
+    }
+
+  }
+
   def whereIsModuleExtensionDirectory() throws Exception {
     def extensionDirectoryRelativeLocation = queryNetKernelProperty('netkernel:/config/netkernel.init.modulesdir')
     return extensionDirectoryRelativeLocation

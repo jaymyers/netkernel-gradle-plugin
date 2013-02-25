@@ -16,6 +16,7 @@ class NetKernelPlugin implements Plugin<Project> {
     // High level tasks
     p.tasks.add(name: 'statusNetKernel', group: 'NetKernel Management', type: NetKernelStatus, description: "Reports on the status of the currently running NetKernel.")
     p.tasks.add(name: 'installNetKernelModules', group: 'NetKernel Management', type: InstallModules, description: "Installs project modules in the currently running NetKernel.")
+    p.tasks.add(name: 'installNetKernelModuleExtensionDirectory', group: 'NetKernel Management', type: InstallModuleExtensionDirectory, description: "Ensures that the currently running NetKernel has the proper module extension property set.")
     p.tasks.add(name: 'removeNetKernelModules', group: 'NetKernel Management', type: RemoveModules, description: "Removes project modules from the currently running NetKernel.")
     p.tasks.add(name: 'removeAllNetKernelModules', group:  'NetKernel Management', type: RemoveAllModules, description: "Removes all modules from any source from the currently running NetKernel.")
     p.tasks.add(name: 'createNetKernelModules', group:  'Module Creation', type: CreateNetKernelModules, description: "Create one or more NetKernel modules for this project from templates.")
@@ -24,7 +25,7 @@ class NetKernelPlugin implements Plugin<Project> {
     p.tasks.add(name: 'createIntelliJProject', group: 'IntelliJ', type: CreateIntelliJProject, description: "Create an IntelliJ project configuration (.idea directory and module *.iml files) for this project.")
     p.tasks.add(name: 'removeIntelliJProject', group:  'IntelliJ', type: RemoveIntelliJProject, description: "Remove all IntelliJ files (.idea directory and *.iml files).")
 
-//    p.tasks.add(name: 'report', group: 'Debug', type: ReportAndExperiment, description: "Experimenting with Gradle.")
+    p.tasks.add(name: 'report', group: 'Debug', type: ReportAndExperiment, description: "Experimenting with Gradle.")
 
     // These are tasks that others automatically depend on. They don't show up when you ask for a list of tasks
     p.tasks.add(name: 'installDefaultTemplates', type: InstallDefaultTemplates, description: "Install default NetKernel module templates.")
@@ -38,7 +39,7 @@ class NetKernelPlugin implements Plugin<Project> {
 
 
 
-        //p.tasks.add(name: 'checkNetKernelInstallation', type: CheckNetKernelInstallation)
+//        p.tasks.add(name: 'checkNetKernelInstallation', type: CheckNetKernelInstallation)
 
 //        p.tasks.installNetKernelJar.dependsOn "downloadNetKernel"
 
