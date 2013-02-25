@@ -125,7 +125,7 @@ From the repo issue this command to install the plugin::
 
   gradle install
 
-The current version number is 0.1.0
+The current version number is 0.1.1-SNAPSHOT
 
 Using the Plugin
 ----------------
@@ -141,7 +141,7 @@ create a build.gradle file with the following contents::
       mavenLocal()
       }
     dependencies {
-      classpath group: 'org.netkernelroc.gradle', name: 'netkernel-gradle-plugin', version: '0.1.0'
+      classpath group: 'org.netkernelroc.gradle', name: 'netkernel-gradle-plugin', version: '0.1.1-SNAPSHOT'
       }
   }
 
